@@ -1,0 +1,23 @@
+<p>Patient List</p>
+<br>
+<input type="button" value="View" (click)="getAll()"/>
+
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Pin</th>
+    </tr>
+    <tr *ngFor="let addr of listOfAdresses">
+        <td>{{ addr.id }}</td>
+        <td>{{ addr.name }}</td>
+        <td>{{ addr.phone }}</td>
+        <td>{{ addr.address }}</td>
+        <td>{{ addr.city }}</td>
+        <td>{{ addr.pin }}</td>
+    </tr>
+</table>
