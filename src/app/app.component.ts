@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelloComponent } from './hello/hello.component';
+import { AddEntryFormComponent } from './add-entry-form/add-entry-form.component';
 import { DisplayAllComponent } from './display-all/display-all.component';
 
 

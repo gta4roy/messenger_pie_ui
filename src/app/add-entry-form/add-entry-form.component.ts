@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AddAddressService } from '../add-address.service';
 
 @Component({
-  selector: 'app-hello',
-  templateUrl: './hello.component.html',
-  styleUrls: ['./hello.component.css']
+  selector: 'app-add-entry-form',
+  templateUrl: './add-entry-form.component.html',
+  styleUrls: ['./add-entry-form.css']
 })
-export class HelloComponent implements OnInit {
+export class AddEntryFormComponent implements OnInit {
 
   constructor(private service : AddAddressService) { }
 
