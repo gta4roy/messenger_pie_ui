@@ -13,16 +13,13 @@ export class AddEntryFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveAddress(event){
+  saveMessage(event){
     event.preventDefault()
     const target = event.target;
-    const name = target.querySelector('#name').value
-    const address = target.querySelector('#address').value
-    const phone = target.querySelector('#phone').value
-    const city = target.querySelector('#city').value
-    const pin = target.querySelector('#pin').value
-    console.log(name,address,phone,city,pin)
-    this.service.saveAddress(name,phone,address,city,pin);
+    const message = target.querySelector('#messagebox').value
+   
+    console.log(message)
+    this.service.saveMessage(message);
 
   }
 

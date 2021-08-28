@@ -5,19 +5,22 @@
 
 <table border="1">
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>Pin</th>
+        <th>Date</th>
+        <th>User</th>
+        <th>Message</th>
+       
     </tr>
     <tr *ngFor="let addr of listOfAdresses">
-        <td>{{ addr.id }}</td>
-        <td>{{ addr.name }}</td>
-        <td>{{ addr.phone }}</td>
-        <td>{{ addr.address }}</td>
-        <td>{{ addr.city }}</td>
-        <td>{{ addr.pin }}</td>
+        <td>{{ addr.date }}</td>
+        <td>{{ addr.user }}</td>
+        <td>{{ addr.message }}</td>
     </tr>
 </table>
+
+
+<!--
+     message :string 
+  date : string
+  user : string
+  id : string
+-->

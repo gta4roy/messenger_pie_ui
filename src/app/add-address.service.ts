@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 export class AddressModel{
-  name :string 
+  message :string 
+  date : string
+  user : string
   id : string
-  phone : string
-  address : string 
-  city : string
-  pin : string 
 }
 @Injectable({
   providedIn: 'root'
@@ -15,23 +13,19 @@ export class AddressModel{
 export class AddAddressService {
 
   constructor(private httpCl : HttpClient) { }
-  saveAddress(name :string ,phone :string , address: string ,city: string , pin :string){
+  saveMessage(message :string){
     const addressObj : AddressModel = new AddressModel()
-    addressObj.name = name 
-    addressObj.phone = phone
-    addressObj.address = address
-    addressObj.city = city 
-    addressObj.pin = pin
+    addressObj.message = message 
+    addressObj.date = new Date().toISOString()
+    addressObj.user = "Abhijit"
     addressObj.id = this.randomStr(8,"abcd1234")
     console.log(addressObj)
 
     return this.httpCl.post<AddressModel>('http://192.168.0.108:9098/api/v1/address/add/',{
-        "id": addressObj.id,
-        "name": addressObj.name,
-        "phone": addressObj.phone,
-        "address" : addressObj.address,
-        "city": addressObj.city,
-        "pin": addressObj.pin
+        "message": addressObj.message,
+        "date": addressObj.date,
+        "user": addressObj.user,
+        "id" : addressObj.id,
     }).subscribe(data=>{
       console.log(data,"is what we got from the server")
     })  
