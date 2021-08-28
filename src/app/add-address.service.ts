@@ -21,7 +21,7 @@ export class AddAddressService {
     addressObj.id = this.randomStr(8,"abcd1234")
     console.log(addressObj)
 
-    return this.httpCl.post<AddressModel>('http://192.168.0.108:9098/api/v1/address/add/',{
+    return this.httpCl.post<AddressModel>('http://127.0.0.1:9098/api/v1/message/add/',{
         "message": addressObj.message,
         "date": addressObj.date,
         "user": addressObj.user,
