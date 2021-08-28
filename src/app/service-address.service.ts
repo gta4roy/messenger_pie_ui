@@ -15,7 +15,7 @@ export class ServiceAddressService {
 
   serverRequestToGetAll(){
     console.log("Sending request to server to fetch all the values")
-    this.httpCl.get<AddressModel[]>('http://127.0.0.1:9098/api/v1/message/getall/').subscribe(data =>{
+    this.httpCl.get<AddressModel[]>('http://192.168.0.104:9098/api/v1/message/getall/').subscribe(data =>{
       //console.log("We Got ",data)
       this.addressListFromServer = data;
       this.dbResponseRecievedSubject.next()
