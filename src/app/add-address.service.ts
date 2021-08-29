@@ -13,11 +13,11 @@ export class AddressModel{
 export class AddAddressService {
 
   constructor(private httpCl : HttpClient) { }
-  saveMessage(message :string){
+  saveMessage(user :string ,message :string){
     const addressObj : AddressModel = new AddressModel()
     addressObj.message = message 
     addressObj.date = new Date().toISOString()
-    addressObj.user = "Abhijit"
+    addressObj.user = user
     addressObj.id = this.randomStr(8,"abcd1234")
     console.log(addressObj)
 

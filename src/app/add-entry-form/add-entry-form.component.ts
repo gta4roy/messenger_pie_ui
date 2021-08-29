@@ -17,9 +17,10 @@ export class AddEntryFormComponent implements OnInit {
     event.preventDefault()
     const target = event.target;
     const message = target.querySelector('#messagebox').value
-   
-    console.log(message)
-    this.service.saveMessage(message);
+    const user = target.querySelector('input[name=user]:checked').value;
+  
+    console.log(user,message)
+    this.service.saveMessage(user,message);
 
   }
 

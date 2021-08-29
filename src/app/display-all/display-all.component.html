@@ -1,26 +1,23 @@
-<p>Click Below to Fetch Message List</p>
-<br>
-<input type="button" value="View" (click)="getAll()"/>
 
-
-<table border="1">
-    <tr>
-        <th>Date</th>
-        <th>User</th>
-        <th>Message</th>
-       
-    </tr>
-    <tr *ngFor="let addr of listOfAdresses">
-        <td>{{ addr.date }}</td>
-        <td>{{ addr.user }}</td>
-        <td>{{ addr.message }}</td>
-    </tr>
-</table>
-
-
-<!--
-     message :string 
-  date : string
-  user : string
-  id : string
--->
+<div class="container-md">
+    <div class="form-group">    
+        <input type="button" style="margin-right: 16px;margin-top: 16px;" class="btn btn-primary" value="Click to See All Messages" (click)="getAll()"/>
+    </div>     
+    
+    <table border="1" class="table table-striped" style="margin-right: 16px;margin-top: 16px;">
+        <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">User</th>
+              <th scope="col">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let addr of listOfAdresses">
+                <td>{{ addr.date }}</td>
+                <td>{{ addr.user }}</td>
+                <td>{{ addr.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
